@@ -3,7 +3,7 @@ import "./ScrollPage.css";
 
 import page1Image from "../img/page1.jpg";
 import page2Image from "../img/page2.jpg";
-import page3Image from "../img/page3.jpg";
+// import page3Image from "../img/page3.jpg";
 import FirstPage from "./pages/FirstPage";
 import SecondPage from "./pages/SecondPage";
 import ThirdPage from "./pages/ThirdPage";
@@ -101,7 +101,7 @@ const ScrollPage = () => {
     <div className="scroll-container" ref={scrollContainerRef}>
       <div
         className="scroll-page"
-        style={{ backgroundImage: `url(${page1Image})` }}
+        // style={{ backgroundImage: `url(${page1Image})` }}
       >
         <FirstPage />
       </div>
@@ -113,7 +113,7 @@ const ScrollPage = () => {
       </div>
       <div
         className="scroll-page"
-        style={{ backgroundImage: `url(${page3Image})` }}
+        style={{ backgroundImage: `url(${page2Image})` }}
       >
         <ThirdPage />
       </div>

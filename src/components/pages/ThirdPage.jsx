@@ -1,7 +1,7 @@
 import React, { useState, useEffect, useRef } from "react";
 import "./ThirdPage.css";
 import netlify from "../../img/netlify.png";
-import MyFlixAngularClient from "../../img/MyFlixAngularClient.png"; 
+import MyFlixAngularClient from "../../img/MyFlixAngularClient.png";
 
 const ThirdPage = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
@@ -26,6 +26,15 @@ const ThirdPage = () => {
     "https://example.com/link4",
     "https://example.com/link5",
     "https://example.com/link6",
+  ];
+
+  const imageText = [
+    "<b>Netlify:</b> <br> sign up, log in, browse movies, add/remove movies<br> to favorites,<br>edit profile, delete profile, log out, secured and more.",
+    "<b>MyFlix Angular Client<b><br> sign up, log in, browse movies, add/remove movies<br>to favorites,<br>edit profile, delete profile, log out, secured and more.",
+    "Image 3",
+    "Image 4",
+    "Image 5",
+    "Image 6",
   ];
 
   const handleScroll = (event) => {
@@ -79,21 +88,20 @@ const ThirdPage = () => {
   }, [currentIndex]);
 
   return (
-    <div
-      className="horizontal-gallery"
-      ref={galleryRef}
-      style={{
-        overflow: "hidden",
-      }}
-    >
+    <div className="horizontal-gallery" ref={galleryRef}>
       <div
         className="image-grid"
         style={{ transform: `translateX(-${currentIndex * 100}%)` }}
       >
         {images.map((image, index) => (
-          <a key={index} className="image-link" href={imageLinks[index]} target="_blank">
-            <img src={image} alt={`Image ${index + 1}`} />
-          </a>
+          <div key={index} className="image-container">
+            <a className="image-link" href={imageLinks[index]} target="_blank">
+              <img src={image} alt={`Image ${index + 1}`} />
+            </a>
+            <div>
+            <p className="image-text" dangerouslySetInnerHTML={{ __html: imageText[index] }}></p>
+            </div>
+          </div>
         ))}
       </div>
     </div>
