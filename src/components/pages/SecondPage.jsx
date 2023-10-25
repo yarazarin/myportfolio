@@ -5,7 +5,7 @@ const SecondPage = () => {
   return (
     <div className="second_container">
       <div className="part_one">
-        <span>Hi!</span>
+        <span style={{fontSize:"2rem"}}>Hi!</span>
         <p>
           I'm a seasoned full-stack web developer well-versed in MERN "NoSQL-MongoDB,
           Express, React - React Native, Node.js" and Angular technologies. My focus is on
@@ -18,17 +18,15 @@ const SecondPage = () => {
           about your project and how I can help it succeed.
         </p>
       </div>
-
       <div className="part_two">
-        <h6>- My Expertise:</h6>
+        <h3>- My Expertise:</h3>
         <ul>
           <li>Frontend: Bootstrap, React, Angular, React Native</li>
           <li>Backend: Node.js, Express, Serverless, Firebase</li>
           <li>Databases: MongoDB, Google Firestore</li>
           <li>Tools: Git, Testing, Project Management</li>
         </ul>
-        <br />
-        <h6>What's in My Portfolio?</h6>
+        <h3>What's in My Portfolio?</h3>
         <p>
           Explore projects ranging from web apps built with React and Angular to
           a native mobile chat app using React Native.
