@@ -28,16 +28,19 @@
 
 .part_one {
   position: relative;
+  top: -50px;
   text-align: left;
   text-align: justify;
   line-height: 140%;
+  height: 70%;
 }
 
 .part_two {
   position: relative;
-  top: 7px;
+  top: -40px;
   width: 50%;
   text-align: left;
+  height: 70%;
 }
 
 .part_two li{
