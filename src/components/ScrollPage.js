@@ -11,6 +11,7 @@ import ThirdPage from "./pages/ThirdPage";
 const ScrollPage = () => {
   const [currentPage, setCurrentPage] = useState(0);
   const totalPages = 3;
+  const touchStartY = useRef(null);
 
   useEffect(() => {
     const handleScroll = (event) => {
@@ -23,10 +24,33 @@ const ScrollPage = () => {
       }
     };
 
+    const handleTouchStart = (event) => {
+      touchStartY.current = event.touches[0].clientY;
+    };
+
+    const handleTouchEnd = (event) => {
+      if (touchStartY.current !== null) {
+        const touchEndY = event.changedTouches[0].clientY;
+        const deltaY = touchEndY - touchStartY.current;
+
+        if (deltaY > 50 && currentPage > 0) {
+          setCurrentPage(currentPage - 1);
+        } else if (deltaY < -50 && currentPage < totalPages - 1) {
+          setCurrentPage(currentPage + 1);
+        }
+
+        touchStartY.current = null;
+      }
+    };
+
     window.addEventListener("wheel", handleScroll);
+    window.addEventListener("touchstart", handleTouchStart);
+    window.addEventListener("touchend", handleTouchEnd);
 
     return () => {
       window.removeEventListener("wheel", handleScroll);
+      window.removeEventListener("touchstart", handleTouchStart);
+      window.removeEventListener("touchend", handleTouchEnd);
     };
   }, [currentPage]);
 
