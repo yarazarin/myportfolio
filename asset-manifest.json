@@ -1,18 +1,17 @@
 {
   "files": {
-    "main.css": "/myportfolio/static/css/main.4d1dd9c0.css",
-    "main.js": "/myportfolio/static/js/main.5f0bb8b9.js",
+    "main.css": "/myportfolio/static/css/main.151a29c1.css",
+    "main.js": "/myportfolio/static/js/main.8b970c0d.js",
     "static/media/page2.jpg": "/myportfolio/static/media/page2.6174314d6dc6bfc07a24.jpg",
     "static/media/page1.jpg": "/myportfolio/static/media/page1.9b0b5b692ac03ec627b5.jpg",
     "static/media/netlify.png": "/myportfolio/static/media/netlify.2c02fb7c72d613cad900.png",
-    "static/media/page3.jpg": "/myportfolio/static/media/page3.2b8203c118a99f2eb8ef.jpg",
     "static/media/MyFlixAngularClient.png": "/myportfolio/static/media/MyFlixAngularClient.63bddeb6abcc95a3efb6.png",
     "index.html": "/myportfolio/index.html",
-    "main.4d1dd9c0.css.map": "/myportfolio/static/css/main.4d1dd9c0.css.map",
-    "main.5f0bb8b9.js.map": "/myportfolio/static/js/main.5f0bb8b9.js.map"
+    "main.151a29c1.css.map": "/myportfolio/static/css/main.151a29c1.css.map",
+    "main.8b970c0d.js.map": "/myportfolio/static/js/main.8b970c0d.js.map"
   },
   "entrypoints": [
-    "static/css/main.4d1dd9c0.css",
-    "static/js/main.5f0bb8b9.js"
+    "static/css/main.151a29c1.css",
+    "static/js/main.8b970c0d.js"
   ]
 }
