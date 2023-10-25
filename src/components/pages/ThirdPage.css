@@ -22,6 +22,7 @@
   display: grid;
   grid-template-columns: repeat(6, 100%);
   transition: transform 0.5s ease;
+  
 }
 
 .image-link {
@@ -42,4 +43,6 @@
 .image-link img {
   max-width: 100%;
   height: auto;
+  border-radius: 8px;
+  border: #ffffff 1px solid;
 }
