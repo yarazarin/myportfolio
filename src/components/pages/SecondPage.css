@@ -12,7 +12,7 @@
 .part_one,
 .part_two {
   padding: 20px;
-  height: 90%;
+  height: 50%;
   width: 50%;
   padding: 8px;
   margin: 8px;
@@ -28,7 +28,6 @@
 
 .part_one {
   position: relative;
-  top: 100px;
   text-align: left;
   text-align: justify;
   line-height: 140%;

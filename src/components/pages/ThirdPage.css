@@ -1,12 +1,13 @@
 .horizontal-gallery {
   padding: 10px;
   border-radius: 12px;
-  background-color: #ffffff65;
-  width: 80%;
+  background-color: #ffffff21;
+  width: 600px;
   max-height: 50%;
   overflow: hidden;
   position: relative;
 }
+
 
 .image-text{
   margin: 0 auto;
