@@ -7,6 +7,7 @@ const ThirdPage = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
   const galleryRef = useRef(null);
   const pointerOverGallery = useRef(false);
+  const touchStartX = useRef(null);
 
   const images = [
     netlify,
@@ -39,6 +40,23 @@ const ThirdPage = () => {
     }
   };
 
+  const handleTouchStart = (event) => {
+    touchStartX.current = event.touches[0].clientX;
+  };
+
+  const handleTouchMove = (event) => {
+    if (touchStartX.current !== null) {
+      const touchX = event.touches[0].clientX;
+      const deltaX = touchX - touchStartX.current;
+      if (deltaX > 0 && currentIndex > 0) {
+        setCurrentIndex(currentIndex - 1);
+      } else if (deltaX < 0 && currentIndex < images.length - 1) {
+        setCurrentIndex(currentIndex + 1);
+      }
+      touchStartX.current = null;
+    }
+  };
+
   useEffect(() => {
     const gallery = galleryRef.current;
 
@@ -49,10 +67,14 @@ const ThirdPage = () => {
 
     // Attach the wheel event listener to the gallery element
     gallery.addEventListener("wheel", handleGalleryScroll, { passive: false });
+    gallery.addEventListener("touchstart", handleTouchStart);
+    gallery.addEventListener("touchmove", handleTouchMove);
 
     return () => {
-      // Remove the event listener when the component unmounts
+      // Remove the event listeners when the component unmounts
       gallery.removeEventListener("wheel", handleGalleryScroll);
+      gallery.removeEventListener("touchstart", handleTouchStart);
+      gallery.removeEventListener("touchmove", handleTouchMove);
     };
   }, [currentIndex]);
 
