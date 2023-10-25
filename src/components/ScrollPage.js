@@ -12,15 +12,25 @@ const ScrollPage = () => {
   const [currentPage, setCurrentPage] = useState(0);
   const totalPages = 3;
   const touchStartY = useRef(null);
+  const changeTimeout = useRef(null);
+
+  const scrollToPage = (page) => {
+    if (scrollContainerRef.current) {
+      scrollContainerRef.current.scrollTo({
+        top: page * window.innerHeight,
+        behavior: "smooth",
+      });
+    }
+  };
 
   useEffect(() => {
     const handleScroll = (event) => {
       const delta = event.deltaY;
 
       if (delta > 0 && currentPage < totalPages - 1) {
-        setCurrentPage(currentPage + 1);
+        setCurrentPage((prevPage) => prevPage + 1);
       } else if (delta < 0 && currentPage > 0) {
-        setCurrentPage(currentPage - 1);
+        setCurrentPage((prevPage) => prevPage - 1);
       }
     };
 
@@ -34,9 +44,9 @@ const ScrollPage = () => {
         const deltaY = touchEndY - touchStartY.current;
 
         if (deltaY > 50 && currentPage > 0) {
-          setCurrentPage(currentPage - 1);
+          setCurrentPage((prevPage) => prevPage - 1);
         } else if (deltaY < -50 && currentPage < totalPages - 1) {
-          setCurrentPage(currentPage + 1);
+          setCurrentPage((prevPage) => prevPage + 1);
         }
 
         touchStartY.current = null;
@@ -57,12 +67,20 @@ const ScrollPage = () => {
   const scrollContainerRef = useRef(null);
 
   useEffect(() => {
-    if (scrollContainerRef.current) {
-      scrollContainerRef.current.scrollTo({
-        top: currentPage * window.innerHeight,
-        behavior: "smooth",
-      });
+    if (changeTimeout.current !== null) {
+      clearTimeout(changeTimeout.current);
     }
+
+    // Apply a delay between page changes to restrict rapid scrolling
+    changeTimeout.current = setTimeout(() => {
+      scrollToPage(currentPage);
+    }, 5000); // Adjust the delay (in milliseconds) as needed
+
+    return () => {
+      if (changeTimeout.current !== null) {
+        clearTimeout(changeTimeout.current);
+      }
+    };
   }, [currentPage]);
 
   const renderDots = () => {
