@@ -1,0 +1,25 @@
+.horizontal-gallery {
+  padding: 10px;
+  border-radius: 12px;
+  background-color: #ffffff65;
+  width: 80%;
+  overflow: hidden;
+  position: relative;
+}
+
+.image-grid {
+  display: grid;
+  grid-template-columns: repeat(6, 100%);
+  transition: transform 0.5s ease;
+}
+
+.image-link {
+  display: block;
+  text-align: center;
+  text-decoration: none;
+}
+
+.image-link img {
+  max-width: 100%;
+  height: auto;
+}

@@ -1,0 +1,58 @@
+.footer {
+  position: fixed;
+  display: flex;
+  flex-direction: column;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: 100px;
+  color: white;
+  text-align: center;
+  background-image: linear-gradient(rgba(180, 180, 180, 0.144), rgb(0, 0, 0));
+  z-index: 2;
+}
+
+.ico {
+  position: absolute;
+  top: 20px;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+}
+
+.ico i {
+  color: rgb(255, 255, 255);
+  font-size: 1.2em;
+}
+
+
+.Rights {
+  position: absolute;
+  top: 60px;
+  float: left;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 0.8rem;
+}
+
+.Rights pre {
+  font-family: "Times New Roman", Times, serif;
+  color: white;
+  font-size: 0.8em;
+}
+
+@media screen and (max-width: 680px) {
+  .footer {
+    position: fixed;
+    background: radial-gradient(
+      ellipse 50% 50px,
+      rgb(0, 255, 247),
+      rgba(0, 247, 255, 0.793) 10%,
+      #00eaff84 40%,
+      rgba(0, 0, 0, 0)
+    );
+  }
+}
