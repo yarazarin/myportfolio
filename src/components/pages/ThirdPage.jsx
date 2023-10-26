@@ -2,6 +2,9 @@ import React, { useState, useEffect, useRef } from "react";
 import "./ThirdPage.css";
 import netlify from "../../img/netlify.png";
 import MyFlixAngularClient from "../../img/MyFlixAngularClient.png";
+import meet from "../../img/meet.png";
+import todo from "../../img/todo.png";
+import chat from "../../img/chat.png";
 
 const ThirdPage = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
@@ -12,9 +15,9 @@ const ThirdPage = () => {
   const images = [
     netlify,
     MyFlixAngularClient,
-    "https://picsum.photos/400/200?random=3",
-    "https://picsum.photos/400/200?random=4",
-    "https://picsum.photos/400/200?random=5",
+    meet,
+    todo,
+    chat,
     "https://picsum.photos/400/200?random=6",
   ];
 
@@ -22,19 +25,19 @@ const ThirdPage = () => {
   const imageLinks = [
     "https://yaramyflix.netlify.app",
     "https://yarazarin.github.io/myFlix-Angular-client/",
-    "https://example.com/link3",
-    "https://example.com/link4",
-    "https://example.com/link5",
-    "https://example.com/link6",
+    "https://yarazarin.github.io/meet/",
+    "https://yarazarin.github.io/to-do-list-app/",
+    "https://github.com/yarazarin/CHAT",
+    "#6",
   ];
 
   const imageText = [
     "<b>Netlify:</b> <br> sign up, log in, browse movies, add/remove movies<br> to favorites,<br>edit profile, delete profile, log out, secured and more.",
     "<b>MyFlix Angular Client<b><br> sign up, log in, browse movies, add/remove movies<br>to favorites,<br>edit profile, delete profile, log out, secured and more.",
-    "Image 3",
-    "Image 4",
-    "Image 5",
-    "Image 6",
+    "Meet App",
+    "ToDo App",
+    "Chat application",
+    "6",
   ];
 
   const handleScroll = (event) => {
@@ -99,7 +102,10 @@ const ThirdPage = () => {
               <img src={image} alt={`Image ${index + 1}`} />
             </a>
             <div>
-            <p className="image-text" dangerouslySetInnerHTML={{ __html: imageText[index] }}></p>
+              <p
+                className="image-text"
+                dangerouslySetInnerHTML={{ __html: imageText[index] }}
+              ></p>
             </div>
           </div>
         ))}
