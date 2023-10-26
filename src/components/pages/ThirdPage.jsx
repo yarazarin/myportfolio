@@ -34,12 +34,12 @@ const ThirdPage = () => {
   ];
 
   const imageText = [
-    "<b>Netlify:</b> <br> sign up, log in, browse movies, add/remove movies<br> to favorites,<br>edit profile, delete profile, log out, secured and more.",
-    "<b>MyFlix Angular Client<b><br> sign up, log in, browse movies, add/remove movies<br>to favorites,<br>edit profile, delete profile, log out, secured and more.",
-    "Meet App: <br>log in with google Authentication, show chart of meetings <br> search by city or country, <br> filter the cities by name and number of cities",
+    "Netlify:<br> sign up, log in, browse movies,<br>add/remove movies<br> to favorites, edit profile,<br> delete profile, log out, secured and more.",
+    "MyFlix Angular Client:<br> sign up, log in, browse movies, add/remove movies<br>to favorites,<br>edit profile, delete profile, log out, secured and more.",
+    "Meet App: <br>log in with google Authentication,<br> show chart of meetings <br> search by city or country, <br> filter the cities by name and number of cities",
     "ToDo App: <br> add, edit, delete, mark as done, <br> filter by all, active, completed, <br> clear completed, <br> save to local storage",
-    "Chat application: <br> log in as a guest , <br> send and recive messages, pictures and using camera on expo go <br>",
-    "6",
+    "Chat application:<br> log in as a guest , <br> send and recive messages,<br>pictures and using camera on expo go app",
+    "API Catcher: <br> search for any API and <br>get the data in JSON format,<br>used bootstrap",
   ];
 
   const handleScroll = (event) => {
