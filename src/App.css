@@ -28,7 +28,7 @@
 /* Mobile phones and portrait-oriented tablets (low width) */
 @media screen and (max-width: 991px) {
   .horizontal-gallery {
-    width: 88%;
+    width: 86%;
   }
   /* Responsive settings for mobile phones and portrait-oriented tablets */
 }

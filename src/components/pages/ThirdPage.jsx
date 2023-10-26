@@ -35,7 +35,7 @@ const ThirdPage = () => {
 
   const imageText = [
     "Netlify:<br> sign up, log in, browse movies,<br>add/remove movies<br> to favorites, edit profile,<br> delete profile, log out, secured and more.",
-    "MyFlix Angular Client:<br> sign up, log in, browse movies, add/remove movies<br>to favorites,<br>edit profile, delete profile, log out, secured and more.",
+    "MyFlix Angular Client:<br> sign up, log in, browse movies,<br>add/remove moviesto favorites,<br>edit profile, delete profile,<br>log out, secured and more.",
     "Meet App: <br>log in with google Authentication,<br> show chart of meetings <br> search by city or country, <br> filter the cities by name and number of cities",
     "ToDo App: <br> add, edit, delete, mark as done, <br> filter by all, active, completed, <br> clear completed, <br> save to local storage",
     "Chat application:<br> log in as a guest , <br> send and recive messages,<br>pictures and using camera on expo go app",
