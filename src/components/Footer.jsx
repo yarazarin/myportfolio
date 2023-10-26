@@ -18,6 +18,14 @@ const Footer = () => {
         >
           <i className="fab fa-github-square"></i>
         </a>
+        <a
+          href="https://www.linkedin.com/in/yara-zarin/"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          <i className="fab fa-linkedin"></i>
+        </a>
+
       </div>
       <div className="Rights">
         <pre> Yara Zarin © 2023</pre>

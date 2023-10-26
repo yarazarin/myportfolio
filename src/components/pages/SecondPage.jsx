@@ -6,7 +6,8 @@ const SecondPage = () => {
     <div className="second_page">
       <div className="second_container">
         <div className="part_one">
-          <span style={{ fontSize: "2rem" }}>Hi!</span>
+          <h1>Hi!</h1>
+          <br />
           <p>
             I'm a seasoned full-stack web developer well-versed in MERN
             "NoSQL-MongoDB, Express, React - React Native, Node.js" and Angular

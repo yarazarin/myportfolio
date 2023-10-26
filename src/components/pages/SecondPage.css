@@ -18,6 +18,7 @@
   align-items: center;
   height: 100vh;
   background-color: #0000002c;
+
 }
 
 .part_one,
@@ -35,11 +36,12 @@
   box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
   background-color: #00000081;
   max-width: 500px;
+  margin: 60px;
 }
 
 .part_one {
   position: relative;
-  top: -50px;
+  top: 10px;
   text-align: left;
   text-align: justify;
   line-height: 140%;
@@ -48,7 +50,6 @@
 
 .part_two {
   position: relative;
-  top: -40px;
   width: 50%;
   text-align: left;
   height: 70%;
@@ -57,6 +58,6 @@
 .part_two li{
   list-style-type:square;
   padding: 1px;
-  margin: 6px;
+  margin: 2px;
   border-radius: 10px;
 }

@@ -14,9 +14,15 @@
 
 /* Small screens (mobile phones) */
 @media screen and (max-width: 767px) {
-  .part_one,
-  .part_two {
+  .part_one{
     font-size: 12px;
+    top: -50px;
+    line-height: 130%;
+  }
+  .part_one{
+    font-size: 12px;
+    top: -40px;
+    line-height: 130%;
   }
   /* Responsive settings for small screens like mobile phones */
 }
