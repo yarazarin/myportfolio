@@ -11,6 +11,7 @@
   .part_two {
     font-size: 18px;
   }
+
 }
 
 /* Small screens (mobile phones) */
@@ -18,12 +19,17 @@
   .part_one .part_one{
     font-size: 12px;
   }
-
+    .mern_logo{
+      width: 50%;
+  }
   /* Responsive settings for small screens like mobile phones */
 }
 
 /* Mobile phones and portrait-oriented tablets (low width) */
 @media screen and (max-width: 991px) {
+  .horizontal-gallery {
+    width: 88%;
+  }
   /* Responsive settings for mobile phones and portrait-oriented tablets */
 }
 

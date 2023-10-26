@@ -6,6 +6,7 @@ import meet from "../../img/meet.png";
 import todo from "../../img/todo.png";
 import chat from "../../img/chat.png";
 import mern from "../../img/mern.png";
+import api_catch from "../../img/api_catch.png";
 
 const ThirdPage = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
@@ -19,7 +20,7 @@ const ThirdPage = () => {
     meet,
     todo,
     chat,
-    "https://picsum.photos/400/200?random=6",
+    api_catch,
   ];
 
   // An array of links corresponding to the images
@@ -29,7 +30,7 @@ const ThirdPage = () => {
     "https://yarazarin.github.io/meet/",
     "https://yarazarin.github.io/to-do-list-app/",
     "https://github.com/yarazarin/CHAT",
-    "#6",
+    "https://yarazarin.github.io/simple-js-app/",
   ];
 
   const imageText = [
