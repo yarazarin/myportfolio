@@ -12,9 +12,8 @@
 .horizontal-gallery {
   padding: 10px;
   border-radius: 12px;
-  background-color: #ffffff21;
-  width: 600px;
-  max-height: 50%;
+  width: 30%;
+  max-height: 45%;
   overflow: hidden;
   position: relative;
 }
