@@ -7,7 +7,6 @@ const SecondPage = () => {
       <div className="second_container">
         <div className="part_one">
           <h1>Hi!</h1>
-          <br />
           <p>
             I'm a seasoned full-stack web developer well-versed in MERN
             "NoSQL-MongoDB, Express, React - React Native, Node.js" and Angular
@@ -33,10 +32,6 @@ const SecondPage = () => {
           <p>
             Explore projects ranging from web apps built with React and Angular
             to a native mobile chat app using React Native.
-          </p>
-          <p>
-            Check out the code on GitHub and get in touch to discuss
-            collaboration or if you have any questions. Thanks for visiting!
           </p>
         </div>
       </div>
