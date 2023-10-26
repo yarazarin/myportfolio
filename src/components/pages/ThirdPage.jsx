@@ -5,6 +5,7 @@ import MyFlixAngularClient from "../../img/MyFlixAngularClient.png";
 import meet from "../../img/meet.png";
 import todo from "../../img/todo.png";
 import chat from "../../img/chat.png";
+import mern from "../../img/mern.png";
 
 const ThirdPage = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
@@ -91,6 +92,8 @@ const ThirdPage = () => {
   }, [currentIndex]);
 
   return (
+    <div className="third_page">
+      <img src={mern} alt="MERN" className="mern_logo" />
     <div className="horizontal-gallery" ref={galleryRef}>
       <div
         className="image-grid"
@@ -110,6 +113,7 @@ const ThirdPage = () => {
           </div>
         ))}
       </div>
+    </div>
     </div>
   );
 };

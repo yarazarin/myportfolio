@@ -1,3 +1,14 @@
+.third_page{
+  height: 100vh;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+
 .horizontal-gallery {
   padding: 10px;
   border-radius: 12px;
@@ -45,4 +56,13 @@
   height: auto;
   border-radius: 8px;
   border: #ffffff 1px solid;
+}
+
+.mern_logo{
+  position: relative;
+  width: 20%;
+  height: auto;
+  border-radius: 8px;
+  border: #ffffff 1px solid;
+  margin-bottom: 3rem;
 }
