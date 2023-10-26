@@ -1,9 +1,9 @@
 import React, { useState, useEffect, useRef } from "react";
 import "./ScrollPage.css";
 
-// import page1Image from "../img/page1.jpg";
+import page1Image from "../img/page1.jpg";
 import page2Image from "../img/page2.jpg";
-// import page3Image from "../img/page3.jpg";
+import page3Image from "../img/page3.jpg";
 import FirstPage from "./pages/FirstPage";
 import SecondPage from "./pages/SecondPage";
 import ThirdPage from "./pages/ThirdPage";
@@ -107,7 +107,7 @@ const ScrollPage = () => {
       </div>
       <div
         className="scroll-page"
-        style={{ backgroundImage: `url(${page2Image})` }}
+        // style={{}}
       >
         <SecondPage />
       </div>
