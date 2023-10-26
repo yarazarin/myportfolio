@@ -1,4 +1,15 @@
 /* SecondPage.css */
+.second_page{
+  height: 100vh;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  background-color: #000;
+}
+
 
 .second_container {
   display: flex;

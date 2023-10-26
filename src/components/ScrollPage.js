@@ -1,7 +1,7 @@
 import React, { useState, useEffect, useRef } from "react";
 import "./ScrollPage.css";
 
-import page1Image from "../img/page1.jpg";
+// import page1Image from "../img/page1.jpg";
 import page2Image from "../img/page2.jpg";
 // import page3Image from "../img/page3.jpg";
 import FirstPage from "./pages/FirstPage";
@@ -74,7 +74,7 @@ const ScrollPage = () => {
     // Apply a delay between page changes to restrict rapid scrolling
     changeTimeout.current = setTimeout(() => {
       scrollToPage(currentPage);
-    }, 5000); // Adjust the delay (in milliseconds) as needed
+    }, 30);
 
     return () => {
       if (changeTimeout.current !== null) {

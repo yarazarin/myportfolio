@@ -1,5 +1,5 @@
 .footer {
-  position: fixed;
+  position:fixed;
   display: flex;
   flex-direction: column;
   left: 0;
@@ -9,7 +9,6 @@
   color: white;
   text-align: center;
   background-image: linear-gradient(rgba(180, 180, 180, 0.144), rgb(0, 0, 0));
-  z-index: 2;
 }
 
 .ico {

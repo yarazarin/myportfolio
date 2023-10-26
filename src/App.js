@@ -7,7 +7,7 @@ function App() {
   return (
     <div className="App">
       <ScrollPage />
-<Footer />
+      <Footer />
     </div>
   );
 }
