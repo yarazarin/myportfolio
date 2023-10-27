@@ -1,5 +1,6 @@
 import React, { useState, useEffect, useRef } from "react";
 import "./ScrollPage.css";
+import Navbar from "./Navbar";
 
 // import page1Image from "../img/page1.jpg";
 import page2Image from "../img/page2.jpg";
@@ -99,6 +100,7 @@ const ScrollPage = () => {
 
   return (
     <div className="scroll-container" ref={scrollContainerRef}>
+      <Navbar setCurrentPage={setCurrentPage} />
       <div
         className="scroll-page"
         // style={{ backgroundImage: `url(${page1Image})` }}

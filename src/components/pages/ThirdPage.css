@@ -10,6 +10,7 @@
 
 
 .horizontal-gallery {
+  touch-action: pan-y;
   padding: 10px;
   border-radius: 12px;
   width: 30%;

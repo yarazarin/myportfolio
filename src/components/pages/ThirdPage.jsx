@@ -56,6 +56,7 @@ const ThirdPage = () => {
 
   const handleTouchStart = useCallback((event) => {
     touchStartX.current = event.touches[0].clientX;
+    event.preventDefault();
   }, []);
 
   const handleTouchMove = useCallback((event) => {
@@ -69,6 +70,7 @@ const ThirdPage = () => {
       }
       touchStartX.current = null;
     }
+    event.preventDefault();
   }, [currentIndex, images.length]);
 
   useEffect(() => {
