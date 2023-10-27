@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useRef } from "react";
+import React, { useState, useRef } from "react";
 import "./ThirdPage.css";
 import netlify from "../../img/netlify.png";
 import MyFlixAngularClient from "../../img/MyFlixAngularClient.png";
