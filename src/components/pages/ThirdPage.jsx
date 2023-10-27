@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useRef, useCallback } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import "./ThirdPage.css";
 import netlify from "../../img/netlify.png";
 import MyFlixAngularClient from "../../img/MyFlixAngularClient.png";
@@ -11,8 +11,6 @@ import api_catch from "../../img/api_catch.png";
 const ThirdPage = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
   const galleryRef = useRef(null);
-  const pointerOverGallery = useRef(false);
-  const touchStartX = useRef(null);
 
   const images = [netlify, MyFlixAngularClient, meet, todo, chat, api_catch];
 
@@ -34,64 +32,6 @@ const ThirdPage = () => {
     "Chat application:<br> log in as a guest , <br> send and recive messages,<br>pictures and using camera on expo go app",
     "API Catcher: <br> search for any API and <br>get the data in JSON format,<br>used bootstrap",
   ];
-
-  const handleScroll = useCallback(
-    (event) => {
-      if (!pointerOverGallery.current) {
-        event.preventDefault();
-        const delta = event.deltaY;
-        if (delta > 0 && currentIndex < images.length - 1) {
-          setCurrentIndex(currentIndex + 1);
-        } else if (delta < 0 && currentIndex > 0) {
-          setCurrentIndex(currentIndex - 1);
-        }
-      }
-    },
-    [currentIndex, images.length]
-  );
-
-  const handleTouchStart = useCallback((event) => {
-    touchStartX.current = event.touches[0].clientX;
-    event.preventDefault();
-  }, []);
-
-  const handleTouchMove = useCallback(
-    (event) => {
-      if (touchStartX.current !== null) {
-        const touchX = event.touches[0].clientX;
-        const deltaX = touchX - touchStartX.current;
-        if (deltaX > 0 && currentIndex > 0) {
-          setCurrentIndex(currentIndex - 1);
-        } else if (deltaX < 0 && currentIndex < images.length - 1) {
-          setCurrentIndex(currentIndex + 1);
-        }
-        touchStartX.current = null;
-      }
-      event.preventDefault();
-    },
-    [currentIndex, images.length]
-  );
-
-  useEffect(() => {
-    const gallery = galleryRef.current;
-
-    const handleGalleryScroll = (event) => {
-      handleScroll(event);
-      event.stopPropagation(); // Prevent the scroll event from reaching the outer container
-    };
-
-    // Attach the wheel event listener to the gallery element
-    gallery.addEventListener("wheel", handleGalleryScroll, { passive: false });
-    gallery.addEventListener("touchstart", handleTouchStart);
-    gallery.addEventListener("touchmove", handleTouchMove);
-
-    return () => {
-      // Remove the event listeners when the component unmounts
-      gallery.removeEventListener("wheel", handleGalleryScroll);
-      gallery.removeEventListener("touchstart", handleTouchStart);
-      gallery.removeEventListener("touchmove", handleTouchMove);
-    };
-  }, [currentIndex, handleScroll, handleTouchMove, handleTouchStart]);
 
   const handlePrevClick = () => {
     if (currentIndex > 0) {
