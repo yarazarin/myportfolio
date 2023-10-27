@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useRef } from "react";
+import React, { useState, useEffect, useRef, useCallback } from "react";
 import "./ThirdPage.css";
 import netlify from "../../img/netlify.png";
 import MyFlixAngularClient from "../../img/MyFlixAngularClient.png";
@@ -42,7 +42,7 @@ const ThirdPage = () => {
     "API Catcher: <br> search for any API and <br>get the data in JSON format,<br>used bootstrap",
   ];
 
-  const handleScroll = (event) => {
+  const handleScroll = useCallback((event) => {
     if (!pointerOverGallery.current) {
       event.preventDefault();
       const delta = event.deltaY;
@@ -52,13 +52,13 @@ const ThirdPage = () => {
         setCurrentIndex(currentIndex - 1);
       }
     }
-  };
+  }, [currentIndex, images.length]);
 
-  const handleTouchStart = (event) => {
+  const handleTouchStart = useCallback((event) => {
     touchStartX.current = event.touches[0].clientX;
-  };
+  }, []);
 
-  const handleTouchMove = (event) => {
+  const handleTouchMove = useCallback((event) => {
     if (touchStartX.current !== null) {
       const touchX = event.touches[0].clientX;
       const deltaX = touchX - touchStartX.current;
@@ -69,7 +69,7 @@ const ThirdPage = () => {
       }
       touchStartX.current = null;
     }
-  };
+  }, [currentIndex, images.length]);
 
   useEffect(() => {
     const gallery = galleryRef.current;
@@ -90,31 +90,36 @@ const ThirdPage = () => {
       gallery.removeEventListener("touchstart", handleTouchStart);
       gallery.removeEventListener("touchmove", handleTouchMove);
     };
-  }, [currentIndex]);
+  }, [currentIndex, handleScroll, handleTouchMove, handleTouchStart]);
 
   return (
     <div className="third_page">
       <img src={mern} alt="MERN" className="mern_logo" />
-    <div className="horizontal-gallery" ref={galleryRef}>
-      <div
-        className="image-grid"
-        style={{ transform: `translateX(-${currentIndex * 100}%)` }}
-      >
-        {images.map((image, index) => (
-          <div key={index} className="image-container">
-            <a className="image-link" href={imageLinks[index]} target="_blank">
-              <img src={image} alt={`Image ${index + 1}`} />
-            </a>
-            <div>
-              <p
-                className="image-text"
-                dangerouslySetInnerHTML={{ __html: imageText[index] }}
-              ></p>
+      <div className="horizontal-gallery" ref={galleryRef}>
+        <div
+          className="image-grid"
+          style={{ transform: `translateX(-${currentIndex * 100}%)` }}
+        >
+          {images.map((image, index) => (
+            <div key={index} className="image-container">
+              <a
+                className="image-link"
+                href={imageLinks[index]}
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <img src={image} alt={`${index + 1}`} />
+              </a>
+              <div>
+                <p
+                  className="image-text"
+                  dangerouslySetInnerHTML={{ __html: imageText[index] }}
+                ></p>
+              </div>
             </div>
-          </div>
-        ))}
+          ))}
+        </div>
       </div>
-    </div>
     </div>
   );
 };
