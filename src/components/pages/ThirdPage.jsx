@@ -14,14 +14,7 @@ const ThirdPage = () => {
   const pointerOverGallery = useRef(false);
   const touchStartX = useRef(null);
 
-  const images = [
-    netlify,
-    MyFlixAngularClient,
-    meet,
-    todo,
-    chat,
-    api_catch,
-  ];
+  const images = [netlify, MyFlixAngularClient, meet, todo, chat, api_catch];
 
   // An array of links corresponding to the images
   const imageLinks = [
@@ -42,36 +35,42 @@ const ThirdPage = () => {
     "API Catcher: <br> search for any API and <br>get the data in JSON format,<br>used bootstrap",
   ];
 
-  const handleScroll = useCallback((event) => {
-    if (!pointerOverGallery.current) {
-      event.preventDefault();
-      const delta = event.deltaY;
-      if (delta > 0 && currentIndex < images.length - 1) {
-        setCurrentIndex(currentIndex + 1);
-      } else if (delta < 0 && currentIndex > 0) {
-        setCurrentIndex(currentIndex - 1);
+  const handleScroll = useCallback(
+    (event) => {
+      if (!pointerOverGallery.current) {
+        event.preventDefault();
+        const delta = event.deltaY;
+        if (delta > 0 && currentIndex < images.length - 1) {
+          setCurrentIndex(currentIndex + 1);
+        } else if (delta < 0 && currentIndex > 0) {
+          setCurrentIndex(currentIndex - 1);
+        }
       }
-    }
-  }, [currentIndex, images.length]);
+    },
+    [currentIndex, images.length]
+  );
 
   const handleTouchStart = useCallback((event) => {
     touchStartX.current = event.touches[0].clientX;
     event.preventDefault();
   }, []);
 
-  const handleTouchMove = useCallback((event) => {
-    if (touchStartX.current !== null) {
-      const touchX = event.touches[0].clientX;
-      const deltaX = touchX - touchStartX.current;
-      if (deltaX > 0 && currentIndex > 0) {
-        setCurrentIndex(currentIndex - 1);
-      } else if (deltaX < 0 && currentIndex < images.length - 1) {
-        setCurrentIndex(currentIndex + 1);
+  const handleTouchMove = useCallback(
+    (event) => {
+      if (touchStartX.current !== null) {
+        const touchX = event.touches[0].clientX;
+        const deltaX = touchX - touchStartX.current;
+        if (deltaX > 0 && currentIndex > 0) {
+          setCurrentIndex(currentIndex - 1);
+        } else if (deltaX < 0 && currentIndex < images.length - 1) {
+          setCurrentIndex(currentIndex + 1);
+        }
+        touchStartX.current = null;
       }
-      touchStartX.current = null;
-    }
-    event.preventDefault();
-  }, [currentIndex, images.length]);
+      event.preventDefault();
+    },
+    [currentIndex, images.length]
+  );
 
   useEffect(() => {
     const gallery = galleryRef.current;
@@ -96,6 +95,8 @@ const ThirdPage = () => {
 
   return (
     <div className="third_page">
+      <h3>What's in My Portfolio?</h3>
+      <br />
       <img src={mern} alt="MERN" className="mern_logo" />
       <div className="horizontal-gallery" ref={galleryRef}>
         <div

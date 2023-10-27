@@ -4,11 +4,10 @@
     font-size: 13px;
     max-width: 100%;
   }
-  /* .navbar button {
-    padding: 5px 20px;
-    font-size: 14px;
-    min-width: 100px;
-  } */
+  .navbar {
+    justify-content:center;
+    margin-top: 15px;
+  }
 }
 
 @media screen and (min-width: 1200px) {

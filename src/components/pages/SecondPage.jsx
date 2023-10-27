@@ -28,11 +28,6 @@ const SecondPage = () => {
             <li>Databases: MongoDB, Google Firestore</li>
             <li>Tools: Git, Testing, Project Management</li>
           </ul>
-          <h3>What's in My Portfolio?</h3>
-          <p>
-            Explore projects ranging from web apps built with React and Angular
-            to a native mobile chat app using React Native.
-          </p>
         </div>
       </div>
     </div>
