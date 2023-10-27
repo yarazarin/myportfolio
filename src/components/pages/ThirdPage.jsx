@@ -93,12 +93,27 @@ const ThirdPage = () => {
     };
   }, [currentIndex, handleScroll, handleTouchMove, handleTouchStart]);
 
+  const handlePrevClick = () => {
+    if (currentIndex > 0) {
+      setCurrentIndex(currentIndex - 1);
+    }
+  };
+
+  const handleNextClick = () => {
+    if (currentIndex < images.length - 1) {
+      setCurrentIndex(currentIndex + 1);
+    }
+  };
+
   return (
     <div className="third_page">
       <h3>What's in My Portfolio?</h3>
       <br />
       <img src={mern} alt="MERN" className="mern_logo" />
       <div className="horizontal-gallery" ref={galleryRef}>
+        <button className="gallery-button left" onClick={handlePrevClick}>
+          &lt;
+        </button>
         <div
           className="image-grid"
           style={{ transform: `translateX(-${currentIndex * 100}%)` }}
@@ -122,6 +137,9 @@ const ThirdPage = () => {
             </div>
           ))}
         </div>
+        <button className="gallery-button right" onClick={handleNextClick}>
+          &gt;
+        </button>
       </div>
     </div>
   );
