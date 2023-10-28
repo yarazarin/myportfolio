@@ -21,12 +21,15 @@
 
 
 .image-text{
+  position: relative;
+  top: -20px;
   margin: 0 auto;
   text-align: center;
   overflow:visible;
   padding: 10px;
-  font-size: .9rem;
-  min-height: 250px;
+  font-size: .7rem;
+  min-height: 300px;
+  min-width:400px;
 }
 
 .image-grid {
