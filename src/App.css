@@ -34,15 +34,17 @@
   .horizontal-gallery {
     width: 85%;
   }
-  
+  .gallery-button{
+    font-size: 30px;
+  }
   .horizontal-gallery .left {
-    left: 4%;
-    top: 40%;
+    left: -1%;
+    top: 43%;
   }
   
   .horizontal-gallery .right {
-    right: 4%;
-    top: 40%;
+    right: -1%;
+    top: 43%;
   }
   /* Responsive settings for mobile phones and portrait-oriented tablets */
 }
