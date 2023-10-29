@@ -36,11 +36,13 @@
   }
   
   .horizontal-gallery .left {
-    left: 12%;
+    left: 4%;
+    top: 40%;
   }
   
   .horizontal-gallery .right {
-    right: 12%;
+    right: 4%;
+    top: 40%;
   }
   /* Responsive settings for mobile phones and portrait-oriented tablets */
 }

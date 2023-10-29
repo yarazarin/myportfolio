@@ -51,35 +51,41 @@ const ThirdPage = () => {
 
   return (
     <div className="third_page">
-      <h3>What's in My Portfolio?</h3>
-      <br />
-      <img src={mern} alt="MERN" className="mern_logo" />
-      <div className="horizontal-gallery" ref={galleryRef}>
-        <a className="gallery-button left" onClick={handlePrevClick}><i class="fa-solid fa-circle-left"></i></a>
-        <div
-          className="image-grid"
-          style={{ transform: `translateX(-${currentIndex * 100}%)` }}
-        >
-          {images.map((image, index) => (
-            <div key={index} className="image-container">
-              <a
-                className="image-link"
-                href={imageLinks[index]}
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                <img src={image} alt={`${index + 1}`} />
-              </a>
-              <div>
-                <p
-                  className="image-text"
-                  dangerouslySetInnerHTML={{ __html: imageText[index] }}
-                ></p>
+      <div className="third_page_container">
+        <h3>What's in My Portfolio?</h3>
+        <br />
+        <img src={mern} alt="MERN" className="mern_logo" />
+        <div className="horizontal-gallery" ref={galleryRef}>
+          <button className="gallery-button left" onClick={handlePrevClick}>
+            <i class="fa-solid fa-circle-left"></i>
+          </button>
+          <div
+            className="image-grid"
+            style={{ transform: `translateX(-${currentIndex * 100}%)` }}
+          >
+            {images.map((image, index) => (
+              <div key={index} className="image-container">
+                <a
+                  className="image-link"
+                  href={imageLinks[index]}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <img src={image} alt={`${index + 1}`} />
+                </a>
+                <div>
+                  <p
+                    className="image-text"
+                    dangerouslySetInnerHTML={{ __html: imageText[index] }}
+                  ></p>
+                </div>
               </div>
-            </div>
-          ))}
+            ))}
+          </div>
+          <button className="gallery-button right" onClick={handleNextClick}>
+            <i class="fa-solid fa-circle-right"></i>
+          </button>
         </div>
-        <a className="gallery-button right" onClick={handleNextClick}><i class="fa-solid fa-circle-right"></i></a>
       </div>
     </div>
   );

@@ -1,19 +1,26 @@
 .third_page {
   height: 100vh;
   width: 100%;
+}
+
+.third_page_container {
   display: flex;
+  position: relative;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   text-align: center;
+  top: 80px;
 }
 
 .horizontal-gallery {
-  touch-action: pan-y;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
   padding: 10px;
   border-radius: 12px;
-  width: 30%;
-  max-height: 45%;
   overflow: hidden;
   position: relative;
 }
@@ -52,7 +59,6 @@
   max-width: 400px;
   margin: 0 auto;
   padding: 10px;
-  transition: 0.3s ease-in-out;
 }
 
 .image-link img {
@@ -70,25 +76,26 @@
 
 .gallery-button {
   position: absolute;
-  color: rgb(0, 0, 0);
-  border-radius: 50%;
-  font-size: 24px;
+  color: rgb(255, 255, 255);
+  font-size: 40px;
   border: none;
   cursor: pointer;
-  top: 35%;
-  z-index: 9;
+  z-index: 999;
+  background-color: transparent;
+  transition: 0.3s ease-in-out;
 }
 
 .gallery-button:hover {
   color: #ff0000;
-zoom: 120%;
-top: 34%;
+  transform:rotate(360deg);
 }
 
 .horizontal-gallery .left {
-  left: 12%;
+  left: 40%;
+  top: 18%;
 }
 
 .horizontal-gallery .right {
-  right: 12%;
+  right: 40%;
+  top: 18%;
 }
