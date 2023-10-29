@@ -34,13 +34,17 @@ const ThirdPage = () => {
   ];
 
   const handlePrevClick = () => {
-    if (currentIndex > 0) {
+    if (currentIndex === 0) {
+      setCurrentIndex(images.length - 1); // Loop to the last image
+    } else {
       setCurrentIndex(currentIndex - 1);
     }
   };
 
   const handleNextClick = () => {
-    if (currentIndex < images.length - 1) {
+    if (currentIndex === images.length - 1) {
+      setCurrentIndex(0); // Loop to the first image
+    } else {
       setCurrentIndex(currentIndex + 1);
     }
   };
@@ -51,9 +55,7 @@ const ThirdPage = () => {
       <br />
       <img src={mern} alt="MERN" className="mern_logo" />
       <div className="horizontal-gallery" ref={galleryRef}>
-        <button className="gallery-button left" onClick={handlePrevClick}>
-          &lt;
-        </button>
+        <a className="gallery-button left" onClick={handlePrevClick}><i class="fa-solid fa-circle-left"></i></a>
         <div
           className="image-grid"
           style={{ transform: `translateX(-${currentIndex * 100}%)` }}
@@ -77,9 +79,7 @@ const ThirdPage = () => {
             </div>
           ))}
         </div>
-        <button className="gallery-button right" onClick={handleNextClick}>
-          &gt;
-        </button>
+        <a className="gallery-button right" onClick={handleNextClick}><i class="fa-solid fa-circle-right"></i></a>
       </div>
     </div>
   );
