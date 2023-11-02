@@ -40,5 +40,5 @@
 }
 .user-message{
   position: relative;
-  min-height: 180px;
+  max-height: 120px;
 }
