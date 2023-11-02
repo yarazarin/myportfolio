@@ -1,12 +1,16 @@
+import "./ContactForm.css";
+
 import React, { useState } from "react";
 import emailjs from "emailjs-com";
-import "./ContactForm.css";
+import ReCAPTCHA from "react-google-recaptcha";
 
 const ContactForm = () => {
   const [firstName, setFirstName] = useState("");
   const [email, setEmail] = useState("");
   const [message, setMessage] = useState("");
   const [emailSent, setEmailSent] = useState(false);
+
+  const [captchaValue, setCaptchaValue] = useState(null);
 
   const handleFirstNameChange = (e) => {
     setFirstName(e.target.value);
@@ -36,6 +40,10 @@ const ContactForm = () => {
       return;
     }
 
+    if (captchaValue === null) {
+      alert("Please complete the CAPTCHA");
+      return;
+    }
 
     const templateParams = {
       firstName: firstName,
@@ -56,12 +64,13 @@ const ContactForm = () => {
           console.log("Email sent successfully");
           setEmailSent(true);
         },
-        (error) => {
-          console.error("Failed to send email", error);
+        () => {
+          console.error("Failed to send email");
         }
       );
 
     handleReset();
+    setCaptchaValue(null);
   };
 
   return (
@@ -73,7 +82,7 @@ const ContactForm = () => {
         <form onSubmit={handleSubmit}>
           <div className="form-group">
             <label htmlFor="firstName">
-              First Name <span style={{ color: 'red' }}>*</span>
+              First Name <span style={{ color: "red" }}>*</span>
             </label>
             <input
               type="text"
@@ -87,7 +96,7 @@ const ContactForm = () => {
           </div>
           <div className="form-group">
             <label htmlFor="email">
-              Email <span style={{ color: 'red' }}>*</span>
+              Email <span style={{ color: "red" }}>*</span>
             </label>
             <input
               type="email"
@@ -101,7 +110,7 @@ const ContactForm = () => {
           </div>
           <div className="form-group">
             <label htmlFor="message">
-              Message <span style={{ color: 'red' }}>*</span>
+              Message <span style={{ color: "red" }}>*</span>
             </label>
             <textarea
               id="message"
@@ -112,7 +121,16 @@ const ContactForm = () => {
               className="form-control user-message"
             />
           </div>
-          <button type="submit" className="btn-primary">Send</button>
+          <ReCAPTCHA
+            sitekey={process.env.REACT_APP_RECAPTCHA_SITE_KEY}
+            onChange={setCaptchaValue}
+          />
+          <button type="submit" className="btn-primary">
+            Send
+          </button>
+          <button type="reset" className="btn-secondary" onClick={handleReset}>
+            Reset
+          </button>
         </form>
       )}
     </div>
