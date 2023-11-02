@@ -31,6 +31,14 @@ const ContactForm = () => {
     setEmailSent(false);
   };
 
+  const handleResetContact = () => {
+    setFirstName("");
+    setEmail("");
+    setMessage("");
+    setEmailSent(false);
+    setCaptchaValue(null);
+  };
+
   const handleSubmit = (e) => {
     e.preventDefault();
 
@@ -68,7 +76,6 @@ const ContactForm = () => {
           console.error("Failed to send email");
         }
       );
-
     handleReset();
     setCaptchaValue(null);
   };
@@ -77,7 +84,13 @@ const ContactForm = () => {
     <div className="contact-container">
       <h2>Contact Me</h2>
       {emailSent ? (
-        <p>Email sent successfully!</p>
+        <>
+          {" "}
+          <p>Email sent successfully!</p>
+          <button type="reset" className="btn-secondary" onClick={handleResetContact}>
+            Reset
+          </button>
+        </>
       ) : (
         <form onSubmit={handleSubmit}>
           <div className="form-group">
@@ -127,9 +140,6 @@ const ContactForm = () => {
           />
           <button type="submit" className="btn-primary">
             Send
-          </button>
-          <button type="reset" className="btn-secondary" onClick={handleReset}>
-            Reset
           </button>
         </form>
       )}
