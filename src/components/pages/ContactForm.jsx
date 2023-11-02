@@ -38,10 +38,10 @@ const ContactForm = () => {
 
 
     const templateParams = {
-      to_email: email,
-      from_name: firstName,
-      subject: "Porto website",
+      firstName: firstName,
+      email: email,
       message: message,
+      subject: "Porto website",
     };
 
     emailjs
