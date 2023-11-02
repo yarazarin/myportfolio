@@ -8,6 +8,20 @@
     justify-content:center;
     margin-top: 15px;
   }
+  .navbar button {
+    padding: 5px 10px;
+    font-size: 14px;
+    min-width: 100px;
+    min-width: 100px;
+  }
+
+  .form-group {
+    min-width: 300px;
+  }
+
+  .user-message{
+    min-height: 150px;
+  }
 }
 
 @media screen and (min-width: 1200px) {
