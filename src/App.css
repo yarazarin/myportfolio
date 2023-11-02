@@ -15,6 +15,10 @@
     min-width: 100px;
   }
 
+  .navbar button:hover {
+    background-color: #ff000000;
+  }
+
   .form-group {
     min-width: 300px;
   }
