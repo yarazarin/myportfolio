@@ -23,14 +23,13 @@
   scroll-snap-align: start;
   background-color: #f0f0f0;
   border-bottom: 1px solid #ddd;
-  /* transition: transform 1s cubic-bezier(0.42, 0, 0.58, 1); */
 }
 
 .dot-container {
   position: fixed;
   top: 50%;
   right: 25px;
-  transform: translateY(-50%);
+  /* transform: translateY(-50%); */
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -44,7 +43,6 @@
   background-color: #4a4949;
   border-radius: 50%;
   cursor: pointer;
-  transition: background-color 0.3s ease;
 }
 
 .dot.active {

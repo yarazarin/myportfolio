@@ -62,10 +62,12 @@
 }
 
 .image-link img {
+  position: relative;
+  top: -20px;
   max-width: 100%;
   height: auto;
-  border-radius: 8px;
-  border: #ffffff 1px solid;
+  border-radius: 12px;
+  border: #ffffff7c 1px solid;
 }
 
 .mern_logo {

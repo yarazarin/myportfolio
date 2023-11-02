@@ -1,29 +1,42 @@
-import React, { useState, useEffect, useRef } from "react";
+import React, { useState, useEffect, useRef, useCallback } from "react";
 import "./ScrollPage.css";
+import smoothscroll from 'smoothscroll-polyfill';
 import Navbar from "./Navbar";
 import ContactForm from "./pages/ContactForm";
 
-// import page1Image from "../img/page1.jpg";
 import page2Image from "../img/page2.jpg";
-// import page3Image from "../img/page3.jpg";
 import FirstPage from "./pages/FirstPage";
 import SecondPage from "./pages/SecondPage";
 import ThirdPage from "./pages/ThirdPage";
 
+smoothscroll.polyfill();
+
 const ScrollPage = () => {
   const [currentPage, setCurrentPage] = useState(0);
+  const [viewportHeight, setViewportHeight] = useState(0);
   const totalPages = 4;
   const touchStartY = useRef(null);
   const changeTimeout = useRef(null);
+  const scrollContainerRef = useRef(null);
 
-  const scrollToPage = (page) => {
+  useEffect(() => {
+    if (scrollContainerRef.current) {
+      setViewportHeight(scrollContainerRef.current.offsetHeight);
+    }
+  }, []);
+
+  const scrollToPage = useCallback((page) => {
     if (scrollContainerRef.current) {
       scrollContainerRef.current.scrollTo({
-        top: page * window.innerHeight,
+        top: page * viewportHeight,
         behavior: "smooth",
       });
     }
-  };
+  }, [viewportHeight]);
+
+  useEffect(() => {
+    scrollToPage(currentPage);
+  }, [currentPage, scrollToPage]);
 
   useEffect(() => {
     const handleScroll = (event) => {
@@ -66,8 +79,6 @@ const ScrollPage = () => {
     };
   }, [currentPage]);
 
-  const scrollContainerRef = useRef(null);
-
   useEffect(() => {
     if (changeTimeout.current !== null) {
       clearTimeout(changeTimeout.current);
@@ -83,7 +94,7 @@ const ScrollPage = () => {
         clearTimeout(changeTimeout.current);
       }
     };
-  }, [currentPage]);
+  }, [currentPage, scrollToPage]);
 
   const renderDots = () => {
     const dots = [];
@@ -101,9 +112,8 @@ const ScrollPage = () => {
 
   return (
     <div className="scroll-container" ref={scrollContainerRef}>
-<Navbar setCurrentPage={setCurrentPage} currentPage={currentPage} />      <div
-        className="scroll-page"
-      >
+      <Navbar setCurrentPage={setCurrentPage} currentPage={currentPage} />{" "}
+      <div className="scroll-page">
         <FirstPage />
       </div>
       <div
@@ -122,7 +132,7 @@ const ScrollPage = () => {
         className="scroll-page"
         style={{ backgroundImage: `url(${page2Image})` }}
       >
-      <ContactForm />
+        <ContactForm />
       </div>
       <div className="dot-container">{renderDots()}</div>
     </div>
