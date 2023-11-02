@@ -1,0 +1,44 @@
+.contact-container {
+  display: flex;
+  position: relative;;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;  
+  width: 100%;
+  margin: 0 auto;
+}
+
+.form-group {
+  margin-bottom: 1rem;
+  width: 100%;
+  min-width: 350px;
+}
+
+.form-control {
+  position: relative;
+  display: block;
+  width: 100%;
+  padding: .375rem .75rem;
+  font-size: 1rem;
+  line-height: 1.5;
+  color: #495057;
+  background-color: #fff;
+  background-clip: padding-box;
+  border: 1px solid #ced4da;
+  border-radius: .25rem;
+  transition: border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+}
+
+.btn-primary {
+  color: #000000;
+  border-color: #ffffff;
+  padding: .375rem .75rem;
+  border-radius: .25rem;
+  font-size: 1rem;
+  line-height: 1.5;
+  cursor: pointer;
+}
+.user-message{
+  position: relative;
+  min-height: 180px;
+}

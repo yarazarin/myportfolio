@@ -1,6 +1,7 @@
 import React, { useState, useEffect, useRef } from "react";
 import "./ScrollPage.css";
 import Navbar from "./Navbar";
+import ContactForm from "./pages/ContactForm";
 
 // import page1Image from "../img/page1.jpg";
 import page2Image from "../img/page2.jpg";
@@ -11,7 +12,7 @@ import ThirdPage from "./pages/ThirdPage";
 
 const ScrollPage = () => {
   const [currentPage, setCurrentPage] = useState(0);
-  const totalPages = 3;
+  const totalPages = 4;
   const touchStartY = useRef(null);
   const changeTimeout = useRef(null);
 
@@ -103,7 +104,6 @@ const ScrollPage = () => {
       <Navbar setCurrentPage={setCurrentPage} />
       <div
         className="scroll-page"
-        // style={{ backgroundImage: `url(${page1Image})` }}
       >
         <FirstPage />
       </div>
@@ -118,6 +118,12 @@ const ScrollPage = () => {
         style={{ backgroundImage: `url(${page2Image})` }}
       >
         <ThirdPage />
+      </div>
+      <div
+        className="scroll-page"
+        style={{ backgroundImage: `url(${page2Image})` }}
+      >
+      <ContactForm />
       </div>
       <div className="dot-container">{renderDots()}</div>
     </div>

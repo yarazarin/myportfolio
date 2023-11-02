@@ -11,7 +11,12 @@ body {
   scrollbar-width: none; /* Firefox */
   -ms-overflow-style: none; /* IE 10+ */
 }
+/* In your main.css file */
 
 body::-webkit-scrollbar {
   display: none; /* Chrome, Safari, and Opera */
+}
+
+* {
+  box-sizing: border-box;
 }
