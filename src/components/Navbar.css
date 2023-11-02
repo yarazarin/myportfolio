@@ -26,6 +26,7 @@
   background-color: #ff0000;
 }
 
-
-
+.navbar button.active {
+  color: #ff0000;
+}
 

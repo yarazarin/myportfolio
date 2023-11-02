@@ -101,8 +101,7 @@ const ScrollPage = () => {
 
   return (
     <div className="scroll-container" ref={scrollContainerRef}>
-      <Navbar setCurrentPage={setCurrentPage} />
-      <div
+<Navbar setCurrentPage={setCurrentPage} currentPage={currentPage} />      <div
         className="scroll-page"
       >
         <FirstPage />
