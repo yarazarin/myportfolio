@@ -95,7 +95,7 @@ const ContactForm = () => {
         <form onSubmit={handleSubmit}>
           <div className="form-group">
             <label htmlFor="firstName">
-              First Name <span style={{ color: "red" }}>*</span>
+              Your Name <span style={{ color: "red" }}>*</span>
             </label>
             <input
               type="text"
