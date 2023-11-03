@@ -87,7 +87,7 @@ const ContactForm = () => {
         <>
           {" "}
           <p>Email sent successfully!</p>
-          <button type="reset" className="btn-secondary" onClick={handleResetContact}>
+          <button type="reset" className="btn-simple" onClick={handleResetContact}>
             Reset
           </button>
         </>
@@ -101,7 +101,7 @@ const ContactForm = () => {
               type="text"
               id="firstName"
               value={firstName}
-              placeholder="Your first name"
+              placeholder="Your Name"
               onChange={handleFirstNameChange}
               required
               className="form-control"
@@ -109,7 +109,7 @@ const ContactForm = () => {
           </div>
           <div className="form-group">
             <label htmlFor="email">
-              Email <span style={{ color: "red" }}>*</span>
+              Your Email <span style={{ color: "red" }}>*</span>
             </label>
             <input
               type="email"
@@ -123,12 +123,12 @@ const ContactForm = () => {
           </div>
           <div className="form-group">
             <label htmlFor="message">
-              Message <span style={{ color: "red" }}>*</span>
+              Your Message <span style={{ color: "red" }}>*</span>
             </label>
             <textarea
               id="message"
               value={message}
-              placeholder="Type your message here..."
+              placeholder="Please enter your message here..."
               onChange={handleMessageChange}
               required
               className="form-control user-message"
@@ -138,8 +138,8 @@ const ContactForm = () => {
             sitekey={process.env.REACT_APP_RECAPTCHA_SITE_KEY}
             onChange={setCaptchaValue}
           />
-          <button type="submit" className="btn-primary">
-            Send
+          <button type="submit" className="btn-simple">
+            send
           </button>
         </form>
       )}

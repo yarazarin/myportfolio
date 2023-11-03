@@ -29,7 +29,7 @@
   transition: border-color .15s ease-in-out,box-shadow .15s ease-in-out;
 }
 
-.btn-primary {
+.btn-simple {
   color: #000000;
   border-color: #ffffff;
   padding: .375rem .75rem;

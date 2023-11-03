@@ -28,7 +28,7 @@ const Footer = () => {
 
       </div>
       <div className="Rights">
-        <pre> Yara Zarin © 2023</pre>
+        <pre> Yara Zarin - 2023</pre>
       </div>
     </div>
   );

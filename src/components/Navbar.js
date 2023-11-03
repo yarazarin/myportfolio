@@ -1,8 +1,12 @@
 import React from "react";
 import "./Navbar.css";
+import clickSound from "../sound/click.wav";
 
 const Navbar = ({ setCurrentPage, currentPage }) => {
+  const sound = new Audio(clickSound);
+
   const navigateToPage = (page) => {
+    sound.play();
     setCurrentPage(page);
   };
 

@@ -52,9 +52,9 @@ const ThirdPage = () => {
   return (
     <div className="third_page">
       <div className="third_page_container">
-        <h3>What's in My Portfolio?</h3>
-        <br />
+        <br/>
         <img src={mern} alt="MERN" className="mern_logo" />
+        <h3>What's in My Portfolio? <i class="fa-solid fa-turn-down"></i></h3>
         <div className="horizontal-gallery" ref={galleryRef}>
           <button className="gallery-button left" onClick={handlePrevClick}>
             <i class="fa-solid fa-circle-left"></i>
