@@ -27,11 +27,13 @@ const FirstPage = () => {
   return (
     <>
       <div className="first_page">
-        <h1>Welcome</h1>
-        <span>
-          I Am Yara,
-          <br />A Full Stack Developer
-        </span>
+        <div className="first-wellcome">
+          <h1>Welcome</h1>
+          <span>
+            I Am Yara,
+            <br />A Full Stack Developer
+          </span>
+        </div>
         <div className="leaf_box">
           <div className="leaf"></div>
           <div className="leaf"></div>
