@@ -11,16 +11,26 @@ const MatrixRain = () => {
     canvas.width = window.innerWidth;
 
     // characters to display
-    const matrix = "010101ｦｱｳｴｵｶｷｹｺｻｼｽｾｿﾀﾂﾃﾅﾆﾇﾈﾊﾋﾎﾏﾐﾑﾒﾓﾔﾕﾗﾘﾜ?";
+    const matrix = "0101ｦｱｳｴｵｶｷｹｺｻｼｽｾｿﾀﾂﾃﾅﾆﾇﾈﾊﾋﾎﾏﾐﾑﾒﾓﾔﾕﾗﾘﾜ";
     const characters = matrix.split("");
 
-    const font_size = 9;
-    const columns = canvas.width / font_size;
+    const font_size = 15;
+    const columns = canvas.width / font_size / 7;
     const drops = [];
 
     for (let x = 0; x < columns; x++) {
       drops[x] = Math.random() * canvas.height;
     }
+
+    // Function to reset the drops array
+    function resetDrops() {
+      for (let x = 0; x < columns; x++) {
+        drops[x] = Math.random() * canvas.height;
+      }
+    }
+
+    // Reset the drops array every 25 seconds
+    setInterval(resetDrops, 10000);
 
     function draw() {
       ctx.fillStyle = "rgba(0, 0, 0, 0.04)";
@@ -41,7 +51,7 @@ const MatrixRain = () => {
       }
     }
 
-    const intervalId = setInterval(draw, 120);
+    const intervalId = setInterval(draw, 150);
 
     return () => {
       clearInterval(intervalId); // Clear the interval on unmount
