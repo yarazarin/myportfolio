@@ -8,17 +8,22 @@ const FirstPage = () => {
       rootMargin: "0px",
       threshold: 0.25,
     };
-    const callbackLeaf = (entries) => {
-      entries.forEach((entry) => {
-        const { target } = entry;
-        if (entry.intersectionRatio >= 0.25) {
-          target.classList.add("is-visible");
-          observerLeaf.unobserve(target); // stop observing once animation starts in ios: test
-        } else {
-          target.classList.remove("is-visible");
-        }
-      });
-    };
+
+const callbackLeaf = (entries) => {
+  entries.forEach((entry) => {
+    const { target } = entry;
+    if (entry.intersectionRatio >= 0.25) {
+      target.classList.add("is-visible");
+      // Check if the user is on iOS
+      if (/iPad|iPhone|iPod/.test(navigator.platform)) {
+        observerLeaf.unobserve(target); // stop observing once animation starts
+      }
+    } else {
+      target.classList.remove("is-visible");
+    }
+  });
+};
+
     const observerLeaf = new IntersectionObserver(callbackLeaf, optionsLeaf);
     sectionsLeaf.forEach((section) => {
       observerLeaf.observe(section);
