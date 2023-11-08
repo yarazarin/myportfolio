@@ -165,6 +165,7 @@
   background: green;
 }
 .leaf.is-visible:nth-child(10) {
+  animation-iteration-count: 1; /* only show once for ios isue*/
   animation: show-10 2023ms ease-in-out forwards;
   width: 30px;
   height: 30px;
