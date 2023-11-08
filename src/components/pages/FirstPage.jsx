@@ -15,7 +15,7 @@ const callbackLeaf = (entries) => {
     if (entry.intersectionRatio >= 0.25) {
       target.classList.add("is-visible");
       // Check if the user is on iOS
-      if (/iPad|iPhone|iPod/.test(navigator.platform)) {
+      if (/iPad|iPhone|iPod/.test(navigator.userAgent)) { 
         observerLeaf.unobserve(target); // stop observing once animation starts
       }
     } else {
