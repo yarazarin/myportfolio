@@ -13,6 +13,7 @@ const FirstPage = () => {
         const { target } = entry;
         if (entry.intersectionRatio >= 0.25) {
           target.classList.add("is-visible");
+          observerLeaf.unobserve(target); // stop observing once animation starts in ios: test
         } else {
           target.classList.remove("is-visible");
         }
